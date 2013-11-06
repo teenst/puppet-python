@@ -29,6 +29,14 @@ class python(
     user   => $pyenv_user,
   }
 
+  $venv_root = "${pyenv_root}/plugins/pyenv-virtualenv"
+  repository { $venv_root:
+    ensure  => 'v20130622',
+    source  => 'yyuu/pyenv-virtualenv',
+    user    => $pyenv_user,
+    require => Repository[$pyenv_root]
+  }
+
   file { "${pyenv_root}/versions":
     ensure  => directory,
     owner   => $pyenv_user,
