@@ -7,7 +7,7 @@ Install Python versions using [pyenv](https://github.com/yyuu/pyenv). Module bas
 ## Usage
 
 ```puppet
-include python::2_7_5
+include python::2_7_6
 include python::3_3_2
 
 # Install any arbitrary Python version
@@ -15,11 +15,11 @@ python { '2.6.8': }
 
 # Install a Python package
 python::package { 'virtualenv':
-  python_version => '2.7.5',
+  python_version => '2.7.6',
 }
 
 # Set the global version of Python
-class { 'python::global': version => '2.7.5' }
+class { 'python::global': version => '2.7.6' }
 
 # Set version of Python within a specific directory
 python::local { '/path/to/directory': version => '3.3.2' }
